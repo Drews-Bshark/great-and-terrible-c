@@ -9,8 +9,8 @@ void *ft_memccpy(void *out, void *in,int c, size_t n)
 	i = 0;
 	while(i < n)
 	{
-		((char *)out)[i] = (char *)in[i]
-		if(out[i] == c)	
+		((unsigned char *)out)[i] = ((unsigned char *)in)[i];
+		if(((unsigned char*)out)[i] == c)	
 		{
 			flag = 1;
 			break;

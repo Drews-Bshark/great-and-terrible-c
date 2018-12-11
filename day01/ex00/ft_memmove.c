@@ -1,11 +1,13 @@
+# include  <stdlib.h>
+
 void *ft_memmove(void *dest, void *source, size_t count)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-	while (i < coint)
+	while (i < count)
 	{
-		dest[i] = source[i];
+		((unsigned char *)dest)[i] = ((unsigned char *)source)[i];
 		i++;
 	}
 	return(dest);	
