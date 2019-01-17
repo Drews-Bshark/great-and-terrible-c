@@ -1,4 +1,4 @@
-#include <stdlib.h>
+
 
 static void skip_atoi(const char **str, int *sig)
 {
@@ -24,14 +24,18 @@ int ft_atoi(const char *str)
 	sig = 1;
 	number = 0;
 	skip_atoi(&str, &sig);
-	while('0'<= *str && *str >= '9')
-	{
+	while('0'<= *str && *str <= '9')
+	{	
+		if ((number * 10 +  *str - '0') < number)
+		{
+			if(sig == 1)
+				return(-1);
+			else
+				return(0);
+		}
+
 		number = number * 10 + *str - '0';
 		str++;
 	}
-	if (9223372036854775807 <= number && sig == 1)
-			return(-1);
-	if(9223372036854775807 < number && sig == -1)
-		return(1);
 	return(number * sig);
 }
