@@ -6,6 +6,8 @@ char *ft_strnew(size_t size)
 	size_t i; 
 
 	i = 0;
+	if(size + 1 < size)
+		return(NULL);
 	str = NULL;
 	if(!(str = (char *)malloc(sizeof(str) * size + 1)))
 		return(NULL);
