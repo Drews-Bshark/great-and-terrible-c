@@ -21,15 +21,20 @@ char *ft_itoa(int n)
 		n/=10;
 		nbr++;
 	}
-       if(!(str = (char *)malloc(sizeof(str) * nbr)))
+       if(!(str = (char *)malloc(sizeof(str) * (nbr + flag))))
 		       return(NULL);
-       str[nbr++] ='\0';
-	while(numb)
+       if(flag)
+       		str[nbr++] = '\0';
+       else
+	      str[nbr] = '\0';
+       	while(numb)
 	{
 		str[--nbr] = numb % 10 + '0';
 		numb /= 10;
 	}
 	if(flag)
+	{
 		str[--nbr] = '-';
+	}
 	return(str);
 }
