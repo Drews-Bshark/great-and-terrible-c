@@ -1,4 +1,4 @@
-char * strcpy( char *instr, const char *outstr )
+char * ft_strcpy( char *instr, const char *outstr )
 {
 	int i;
 	

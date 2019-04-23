@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <string.h>
 
 void ft_putendl(char const *s)
 {
